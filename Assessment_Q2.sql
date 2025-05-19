@@ -4,9 +4,9 @@ WITH trx AS (SELECT
                   date_format(s.transaction_date, '%Y-%m') as months,
 				   count(*) monthly_trx_counts
              FROM adashi_staging.users_customuser AS u
-			 LEFT JOIN adashi_staging.savings_savingsaccount AS s ON u.id = s.owner_id
+	     LEFT JOIN adashi_staging.savings_savingsaccount AS s ON u.id = s.owner_id
              WHERE s.transaction_date is not null
-			 GROUP BY 1,2),
+	     GROUP BY 1,2),
 
 -- calculating the average monthly transactions of each customer
 avg_trx as (SELECT 
