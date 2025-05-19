@@ -17,12 +17,12 @@ avg_trx as (SELECT
 
 -- creating the category based on the average monthly transaction per customer
 cat as (SELECT 
-			 owner_id,
+	     owner_id,
              avg_trx_monthly,
              case when avg_trx_monthly >= 10 then 'High Frequency'
-				  when avg_trx_monthly >= 3 then 'Medium Frequency'
+		  when avg_trx_monthly >= 3 then 'Medium Frequency'
                   when avg_trx_monthly < 3 then 'Low Frequency'
-				  end as frequency_category
+		  end as frequency_category
         FROM avg_trx)
 
 SELECT frequency_category,
