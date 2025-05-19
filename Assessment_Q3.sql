@@ -4,10 +4,10 @@ SELECT
      p.id as plan_id, 
      p.owner_id, 
      case when is_regular_savings = 1 then 'Savings'
-		  when is_a_fund = 1 then 'Investment'
+	  when is_a_fund = 1 then 'Investment'
           end as type,
-     cast(max(transaction_date) as date) as last_transaction_date,
-     datediff(curdate(), max(transaction_date)) as inactivity_days
+     cast(max(transaction_date) as date) as last_transaction_date, -- to get the last transaction date
+     datediff(curdate(), max(transaction_date)) as inactivity_days -- to get the difference between the last transaction date and current date
 
 FROM plans_plan as p
 LEFT JOIN savings_savingsaccount as s on p.id = s.plan_id
