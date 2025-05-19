@@ -64,7 +64,7 @@ Find all active savings or investment accounts with no transactions in the last 
 ---
 
 
-# Task 4. Customer Lifetime Value (CLV) Estimation**
+# Task 4. Customer Lifetime Value (CLV) Estimation
 
 **Problem:**
 Estimate Customer Lifetime Value CLV based on account tenure and transaction behavior using the formula:  
