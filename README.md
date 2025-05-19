@@ -16,7 +16,7 @@ Identify customers with at least one funded savings plan and one funded investme
 - The Results were ordered by *total_deposits* in descending order.
 
 **Challenges:**  
-- Understanding plan types (is_regular_savings, is_a_fund) and counting them correctly.
+- Understanding plan types (is_regular_savings, is_a_fund) and counting them correctly. The HINT field provided in the assessment gave an understanding of the plan types.
 - Avoiding duplicate plan counts, and this was resolved with the *COUNT(DISTINCT ...)*.
 
 
@@ -38,7 +38,7 @@ Classify customers by their **average number of transactions per month**:
 - A SELECT aggregating the number of customers and average transaction volume for each category.
 
 **Challenges:**
-- Had to think of a way to collapse the frequency category
+- Had to think of a way to collapse the frequency category, and the average on average was used.
 - Handled users with low or irregular activity by ensuring averages were calculated over actual months with activity.
 
 
