@@ -8,14 +8,14 @@ WITH trx AS (SELECT
              WHERE s.transaction_date is not null
 			 GROUP BY 1,2),
 
--- calculating the average monthly trx of each customer
+-- calculating the average monthly transactions of each customer
 avg_trx as (SELECT 
                 owner_id, 
                 avg(monthly_trx_counts) as avg_trx_monthly
             FROM trx
             GROUP BY 1),
 
--- creating the category based on the verage monthly transaction per customer
+-- creating the category based on the average monthly transaction per customer
 cat as (SELECT 
 			 owner_id,
              avg_trx_monthly,
