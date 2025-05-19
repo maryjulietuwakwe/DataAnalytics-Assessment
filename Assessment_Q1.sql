@@ -9,7 +9,7 @@ WITH funded_plans AS (
     FROM adashi_staging.users_customuser u
     INNER JOIN adashi_staging.plans_plan p ON u.id = p.owner_id
     INNER JOIN adashi_staging.savings_savingsaccount s ON p.id = s.plan_id
-    WHERE (s.confirmed_amount IS NOT NULL and s.confirmed_amount > 0)
+    WHERE (s.confirmed_amount IS NOT NULL and s.confirmed_amount > 0) -- a condition that takes out 0 or null amounts
 )
 
 SELECT 
