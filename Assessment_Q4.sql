@@ -1,10 +1,12 @@
+-- cte to get the tenure month needed for the CLV calculation
 with customer_info as (SELECT 
-							 id as customer_id,
-							 concat(first_name, ' ', last_name) as name,
-                             date_joined,
-							 timestampdiff(month, date_joined, current_date) as tenure_months -- months since signup: To get this, I used the date_joined column of the users table
-					   FROM adashi_staging.users_customuser),
+			    id as customer_id,
+			   concat(first_name, ' ', last_name) as name,
+                           date_joined,
+			    timestampdiff(month, date_joined, current_date) as tenure_months -- months since signup: To get this, I used the date_joined column of the users table
+			FROM adashi_staging.users_customuser),
 
+-- cte for total and average transactions per customer	
 trx as (SELECT  
              owner_id as customer_id, 
              count(*) as total_transactions, -- transaction volume
